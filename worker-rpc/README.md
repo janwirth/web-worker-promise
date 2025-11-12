@@ -2,7 +2,7 @@
 
 Typed, promise-based APIs for web workers.
 
-For a working example, check out /worker-rpc-example
+For a working example, check out `/example` in the monorepo root.
 
 ## Usage
 

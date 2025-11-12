@@ -1,15 +1,40 @@
 # web-worker-rpc
 
-To install dependencies:
+Typed, promise-based RPC APIs for web workers.
+
+This monorepo contains:
+
+- **`@janwirth/worker-rpc`** - The main library package
+- **`example`** - Example usage with Vite
+
+## Installation
 
 ```bash
 bun install
 ```
 
-To run:
+## Building
+
+Build the worker-rpc package:
 
 ```bash
-bun run index.ts
+bun run build
 ```
 
-This project was created using `bun init` in bun v1.2.21. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Development
+
+Run the example:
+
+```bash
+cd example
+bun run dev
+```
+
+## Package Structure
+
+- `worker-rpc/` - Main library package (`@janwirth/worker-rpc`)
+- `example/` - Example application demonstrating usage
+
+## Workspaces
+
+This project uses Bun workspaces. The root `package.json` defines workspaces for `worker-rpc` and `example` packages.

@@ -1,8 +1,15 @@
 {
   "name": "web-worker-rpc",
-  "module": "index.ts",
   "type": "module",
   "private": true,
+  "workspaces": [
+    "worker-rpc",
+    "example"
+  ],
+  "scripts": {
+    "build": "bun run --filter @janwirth/worker-rpc build",
+    "prepublishOnly": "bun run build"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
