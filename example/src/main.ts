@@ -1,4 +1,4 @@
-import { createClient } from "@janwirth/worker-rpc";
+import { createClient } from "@janwirth/web-worker-promise/main";
 import type { WorkerApi } from "./worker";
 
 // Create the worker
@@ -13,7 +13,9 @@ const client = createClient<WorkerApi>(worker);
 const helloBtn = document.getElementById("helloBtn") as HTMLButtonElement;
 const helloOutput = document.getElementById("helloOutput") as HTMLDivElement;
 const processBtn = document.getElementById("processBtn") as HTMLButtonElement;
-const processOutput = document.getElementById("processOutput") as HTMLDivElement;
+const processOutput = document.getElementById(
+  "processOutput"
+) as HTMLDivElement;
 
 // Hello example
 helloBtn.addEventListener("click", async () => {
@@ -24,7 +26,9 @@ helloBtn.addEventListener("click", async () => {
     const result = await client.sayHello("World", 2000);
     helloOutput.textContent = `Result: ${result}`;
   } catch (error) {
-    helloOutput.textContent = `Error: ${error instanceof Error ? error.message : String(error)}`;
+    helloOutput.textContent = `Error: ${
+      error instanceof Error ? error.message : String(error)
+    }`;
   } finally {
     helloBtn.disabled = false;
   }
@@ -38,11 +42,13 @@ processBtn.addEventListener("click", async () => {
   try {
     const results = await client.processData("test data", 5);
     processOutput.textContent = "Processing complete!\n\n";
-    results.forEach((result, index) => {
+    results.forEach((result: string, index: number) => {
       processOutput.textContent += `${result}\n`;
     });
   } catch (error) {
-    processOutput.textContent += `\nError: ${error instanceof Error ? error.message : String(error)}\n`;
+    processOutput.textContent += `\nError: ${
+      error instanceof Error ? error.message : String(error)
+    }\n`;
   } finally {
     processBtn.disabled = false;
   }

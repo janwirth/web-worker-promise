@@ -1,6 +1,6 @@
 # Worker RPC Example
 
-A simple example application demonstrating the `@janwirth/worker-rpc` package with Vite.
+A simple example application demonstrating the `@janwirth/web-worker-promise` package with Vite.
 
 ## Features
 

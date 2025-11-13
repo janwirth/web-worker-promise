@@ -1,4 +1,4 @@
-import { createWorkerInstance } from "@janwirth/worker-rpc";
+import { createWorkerInstance } from "@janwirth/web-worker-promise/worker";
 
 // Define the worker API - all methods must return Promises
 const workerApi = {

@@ -3,11 +3,11 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "worker-rpc",
+    "web-worker-promise",
     "example"
   ],
   "scripts": {
-    "build": "bun run --filter @janwirth/worker-rpc build",
+    "build": "bun run --filter @janwirth/web-worker-promise build",
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {

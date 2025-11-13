@@ -62,7 +62,7 @@ export function createWorkerInstance<TAPI extends WorkerAPI<TAPI>>(api: TAPI) {
     }
   }
 
-  self.addEventListener("message", (event) => {
+  self.addEventListener("message", (event: MessageEvent) => {
     const message = event.data as WorkerMessage<TAPI>;
     handleMessage(message).catch((error) => {
       if (error instanceof Error) {

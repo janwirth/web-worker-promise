@@ -1,4 +1,4 @@
-# @janwirth/worker-rpc
+# @janwirth/web-worker-promise
 
 Typed, promise-based APIs for web workers.
 
@@ -6,10 +6,15 @@ For a working example, check out `/example` in the monorepo root.
 
 ## Usage
 
+The package provides separate entry points for main thread and worker code:
+
+- `@janwirth/web-worker-promise/main` - For main thread code (client)
+- `@janwirth/web-worker-promise/worker` - For worker code (instance)
+
 In your worker file, define your API (all methods must return Promises):
 
 ```typescript
-import { createWorkerInstance } from "@janwirth/worker-rpc";
+import { createWorkerInstance } from "@janwirth/web-worker-promise/worker";
 
 const myApi = {
   async processData(data: string): Promise<string> {
@@ -28,7 +33,7 @@ createWorkerInstance(myApi);
 In your main thread code, create a client:
 
 ```typescript
-import { createClient } from "@janwirth/worker-rpc";
+import { createClient } from "@janwirth/web-worker-promise/main";
 
 const worker = new Worker(new URL("./worker.ts", import.meta.url), {
   type: "module",
@@ -40,6 +45,8 @@ const client = createClient<typeof myApi>(worker);
 const result = await client.processData("input");
 const sum = await client.calculateSum(5, 3);
 ```
+
+**Note:** The default export (`@janwirth/web-worker-promise`) also works and points to `/main` for backward compatibility.
 
 ## API
 

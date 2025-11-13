@@ -1,0 +1,34 @@
+{
+  "name": "@janwirth/web-worker-promise",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/main.js"
+    },
+    "./main": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/main.js"
+    },
+    "./worker": {
+      "types": "./dist/worker.d.ts",
+      "default": "./dist/worker.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bun build ./src/main.ts --outdir ./dist --target browser --format esm --minify --outfile ./dist/main.js && bun build ./src/worker.ts --outdir ./dist --target browser --format esm --minify --outfile ./dist/worker.js && tsc --emitDeclarationOnly --declaration --declarationMap"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

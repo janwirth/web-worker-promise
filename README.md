@@ -4,7 +4,7 @@ Typed, promise-based RPC APIs for web workers.
 
 This monorepo contains:
 
-- **`@janwirth/worker-rpc`** - The main library package
+- **`@janwirth/web-worker-promise`** - The main library package
 - **`example`** - Example usage with Vite
 
 ## Installation
@@ -15,7 +15,7 @@ bun install
 
 ## Building
 
-Build the worker-rpc package:
+Build the web-worker-promise package:
 
 ```bash
 bun run build
@@ -32,9 +32,9 @@ bun run dev
 
 ## Package Structure
 
-- `worker-rpc/` - Main library package (`@janwirth/worker-rpc`)
+- `web-worker-promise/` - Main library package (`@janwirth/web-worker-promise`)
 - `example/` - Example application demonstrating usage
 
 ## Workspaces
 
-This project uses Bun workspaces. The root `package.json` defines workspaces for `worker-rpc` and `example` packages.
+This project uses Bun workspaces. The root `package.json` defines workspaces for `web-worker-promise` and `example` packages.
