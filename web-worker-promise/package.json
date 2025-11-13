@@ -22,6 +22,9 @@
     "dist",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bun build ./src/main.ts --outdir ./dist --target browser --format esm --minify --outfile ./dist/main.js && bun build ./src/worker.ts --outdir ./dist --target browser --format esm --minify --outfile ./dist/worker.js && tsc --emitDeclarationOnly --declaration --declarationMap"
   },

@@ -1,6 +1,10 @@
-# web-worker-rpc
+# @janwirth/web-worker-promise
 
 Typed, promise-based RPC APIs for web workers.
+
+## Documentation
+
+See the [package documentation](./web-worker-promise/README.md) for detailed usage instructions and API reference.
 
 This monorepo contains:
 
